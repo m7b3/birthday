@@ -1,0 +1,288 @@
+/* RESET */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #020617;
+    color: #fff;
+    font-family: "Segoe UI", Arial, sans-serif;
+}
+
+/* ================= HERO ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-content {
+    max-width: 600px;
+}
+
+.title {
+    font-size: 2rem;
+    margin-bottom: 16px;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+.subtitle {
+    font-size: 1.1rem;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 0.5s;
+}
+
+.surprise-btn {
+    margin-top: 30px;
+    padding: 14px 32px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 30px;
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    color: #fff;
+    cursor: pointer;
+    opacity: 0;
+    animation: fadeInUp 1.5s ease forwards;
+    animation-delay: 1s;
+    transition: transform 0.3s ease;
+}
+
+.surprise-btn:hover { transform: scale(1.05); }
+.surprise-btn:active { transform: scale(0.95); }
+
+/* ================= GALLERY ================= */
+.gallery-section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 2rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 0.8s ease;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    margin: auto;
+}
+
+.gallery img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    border-radius: 12px;
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+
+.gallery img:hover {
+    transform: scale(1.02);
+    filter: none;
+    box-shadow: none;
+}
+
+.gallery img.show {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.gallery-section.show .section-title,
+.gallery-section.show img {
+    opacity: 1;
+    transform: none;
+}
+
+/* ================= FINAL ================= */
+.final-section {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #020617, #0f172a);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.final-title {
+    font-size: 2.2rem;
+    margin-bottom: 24px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+}
+
+.final-section.show .final-title {
+    opacity: 1;
+    transform: none;
+}
+
+/* ================= GIFT ================= */
+.gift-box {
+    font-size: 4rem;
+    cursor: pointer;
+    margin: 30px 0;
+    transition: 0.4s ease;
+}
+
+.gift-box:hover {
+    transform: scale(1.2) rotate(-5deg);
+}
+
+/* ================= LETTER ================= */
+.letter {
+    display: none;
+    background: linear-gradient(180deg, #ffffff, #f1f5f9);
+    color: #020617;
+    padding: 40px 45px;
+    border-radius: 18px;
+    max-width: 640px;
+    margin: 30px auto 0;
+    box-shadow: 0 30px 60px rgba(2,6,23,0.25);
+    font-family: Georgia, serif;
+    line-height: 1;
+    letter-spacing: 0.3px;
+    position: relative;
+    transform-origin: top;
+}
+
+.letter::before {
+    content: "";
+    position: absolute;
+    top: 18px;
+    left: 40px;
+    right: 40px;
+    height: 2px;
+    background: linear-gradient(90deg, #ec4899, #8b5cf6);
+}
+
+.letter.unfold {
+    display: block;
+    animation: unfold 1s ease forwards, paperFloat 3s ease-in-out infinite alternate;
+}
+
+#letter-text {
+    font-size: 1.05rem;
+    margin-top: 20px;
+}
+
+.letter-header {
+    text-align: left;
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+}
+
+.letter-body {
+    text-align: left;
+    font-size: 1.05rem;
+    line-height: 1.9;
+    white-space: pre-line;
+}
+
+.regards {
+    margin-top: 40px;
+    text-align: left;
+    font-size: 1.05rem;
+    font-style: italic;
+}
+
+
+/* ================= ACHIEVEMENT ================= */
+.achievement-section {
+    min-height: 100vh;
+    background: linear-gradient(180deg, #0f172a, #020617);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.achievement-title {
+    font-size: 2.4rem;
+    margin-bottom: 40px;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: 1s ease;
+}
+
+.achievement-card {
+    background: linear-gradient(135deg, #ec4899, #8b5cf6);
+    border-radius: 20px;
+    padding: 35px 30px;
+    color: #fff;
+    box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+    opacity: 0;
+    transform: scale(0.9);
+    transition: 1s ease;
+}
+
+.achievement-icon {
+    font-size: 4rem;
+    margin-bottom: 15px;
+}
+
+.achievement-section.show .achievement-title,
+.achievement-section.show .achievement-card {
+    opacity: 1;
+    transform: none;
+}
+
+/* ================= LOADING ================= */
+#loading-screen {
+    position: fixed;
+    inset: 0;
+    background: #020617;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+}
+
+.loading-bar {
+    width: 200px;
+    height: 6px;
+    background: #1e293b;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.loading-bar span {
+    display: block;
+    height: 100%;
+    width: 0;
+    background: linear-gradient(90deg, #ec4899, #8b5cf6);
+    animation: loading 3s forwards;
+}
+
+/* ================= ANIMATIONS ================= */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes unfold {
+    to { transform: scaleY(1); }
+}
+
+@keyframes paperFloat {
+    from { transform: translateY(10px); }
+    to { transform: translateY(0); }
+}
+
+@keyframes loading {
+    to { width: 100%; }
+}
